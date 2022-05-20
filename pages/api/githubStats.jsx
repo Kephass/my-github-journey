@@ -1,6 +1,6 @@
 const { Octokit } = require('@octokit/rest');
 
-export default async (req, res) => {
+const githubStats = async (req, res) => {
 	const octokit = new Octokit({
 		auth: process.env.GITHUB_AUTH_TOKEN,
 	});
@@ -32,3 +32,5 @@ export default async (req, res) => {
 		starred: reposStarredCount,
 	});
 };
+
+export default githubStats;
