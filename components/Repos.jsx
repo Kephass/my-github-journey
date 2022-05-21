@@ -6,10 +6,7 @@ import {
 	Stat,
 	StatHelpText,
 	StatLabel,
-	StatNumber,
 	Text,
-	HStack,
-	Center,
 	Grid,
 } from '@chakra-ui/react';
 import Link from 'next/link';
@@ -22,7 +19,6 @@ async function fetcher(...arg) {
 }
 
 const Repos = () => {
-	const [repoName, setRepoName] = useState('');
 	const { data, error } = useSWR('/api/githubRepos', fetcher);
 
 	return (
@@ -39,39 +35,39 @@ const Repos = () => {
 					>
 						{data.repos.data.map((repo, index) => {
 							return (
-								<Box
+								<Link
+									as={`/repos/commit/${repo.name}`}
+									href={`/repos/commit/${repo.name}`}
 									key={index}
-									p={5}
-									mb={3}
-									borderWidth='1px'
-									rounded='lg'
-									boxShadow={'md'}
-									onClick={() => setRepoName(repo.name)}
 								>
-									<Stat>
-										<StatLabel fontSize='xl'>
-											{repo.name}
-											<Text
-												as='span'
-												fontSize='.7rem'
-												mx='2'
-												py='1'
-												px='3'
-												borderWidth='1px'
-												borderRadius='xl'
-											>
-												{repo.visibility}
-											</Text>
-										</StatLabel>
-										<StatHelpText color='teal.300' noOfLines={2}>
-											<Text>{data ? repo.description : 'Loading'}</Text>
-										</StatHelpText>
-										{/* {commits &&
-											commits.map((commit, i) => {
-												return <Text key={i}>Commits {commit.node_id}</Text>;
-											})} */}
-									</Stat>
-								</Box>
+									<Box
+										p={5}
+										mb={3}
+										borderWidth='1px'
+										rounded='lg'
+										boxShadow={'md'}
+									>
+										<Stat>
+											<StatLabel fontSize='xl'>
+												{repo.name}
+												<Text
+													as='span'
+													fontSize='.7rem'
+													mx='2'
+													py='1'
+													px='3'
+													borderWidth='1px'
+													borderRadius='xl'
+												>
+													{repo.visibility}
+												</Text>
+											</StatLabel>
+											<StatHelpText color='teal.300' noOfLines={2}>
+												<Text>{data ? repo.description : 'Loading'}</Text>
+											</StatHelpText>
+										</Stat>
+									</Box>
+								</Link>
 							);
 						})}
 					</Grid>
