@@ -6,7 +6,7 @@ const githubCommits = async (name) => {
 			auth: process.env.GITHUB_AUTH_TOKEN,
 		});
 
-		// Get all my repos
+		// Get all my repo's commits
 		const response = await octokit.request(`/repos/Kephass/${name}/commits`);
 		return {
 			commits: response?.data,
