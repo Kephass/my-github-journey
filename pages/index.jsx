@@ -41,7 +41,6 @@ const Home = () => {
 		},
 	];
 	if (error) return alert(error.message);
-	console.log(data);
 	return (
 		<Container mt='70px' width='80%' maxWidth='1200px'>
 			<Head>
