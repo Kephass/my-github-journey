@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
 import {
 	Box,
 	Container,
-	Flex,
 	Stat,
 	StatHelpText,
 	StatLabel,
@@ -12,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import Link from 'next/link';
 import useSWR from 'swr';
+import ReactTimeAgo from 'react-time-ago';
 
 async function fetcher(...arg) {
 	const res = await fetch(...arg);
@@ -70,7 +69,10 @@ const Repos = () => {
 												<HStack fontSize='.7rem'>
 													<Text>{repo?.language}</Text>
 													<Text>{repo?.license?.name}</Text>
-													<Text>{repo?.updated_at}</Text>
+													<ReactTimeAgo
+														date={repo?.updated_at}
+														locale='en-US'
+													/>
 												</HStack>
 											</Stat>
 										</Box>

@@ -1,4 +1,3 @@
-import { useState, useRef } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import {
 	Box,
