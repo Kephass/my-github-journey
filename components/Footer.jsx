@@ -2,7 +2,7 @@ import { Box, Divider, Text } from '@chakra-ui/react';
 
 const Footer = () => {
 	return (
-		<Box textAlign='center' alignSelf='flex-end'>
+		<Box textAlign='center' alignSelf='flex-end' marginTop='100px'>
 			<Divider></Divider>
 			<Text padding='3'>
 				Created by{' '}
