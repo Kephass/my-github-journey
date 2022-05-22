@@ -17,7 +17,7 @@ import Search from '../../../components/Search';
 const Commit = (index) => {
 	const router = useRouter();
 	const { name } = router.query;
-	const { data, error } = useSWR(name, `${githubCommits}/?per_page=100`);
+	const { data, error } = useSWR(name, githubCommits);
 
 	// Search through the commits
 	const searchInput = useRecoilValue(searchStateAtom);

@@ -7,7 +7,9 @@ const githubCommits = async (name) => {
 		});
 
 		// Get all my repo's commits
-		const response = await octokit.request(`/repos/Kephass/${name}/commits`);
+		const response = await octokit.request(
+			`/repos/Kephass/${name}/commits?per_page=200`
+		);
 		return {
 			commits: response?.data,
 		};
