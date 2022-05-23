@@ -1,4 +1,4 @@
-This is a small Github API prject built with [Next.js](https://nextjs.org/).
+This is a Github API project built with [Next.js](https://nextjs.org/).
 
 ## My Github Journey project
 
