@@ -26,7 +26,7 @@ Update the .env file with the token sent to your email address.
 - Octokit
 
 
-## ES6 features
+## Some ES6 features
 
 1. Optional chaining
    I used optional chaining to read the value of the github api data located deep within connected objects without having to check that each reference in the chain is valid. That way I avoid writing chunky code.
