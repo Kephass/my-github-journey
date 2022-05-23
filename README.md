@@ -13,7 +13,7 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. 
 
 # .env
-Update the .env file with the toke sent to your email address.
+Update the .env file with the token sent to your email address.
 
 
 ## Technologies used
