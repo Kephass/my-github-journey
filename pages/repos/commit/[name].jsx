@@ -10,13 +10,14 @@ import { useRouter } from 'next/router';
 import { DiLinux } from 'react-icons/di';
 import githubCommits from '../../api/githubCommits';
 import useSWR from 'swr';
+import ReactTimeAgo from 'react-time-ago';
 import { useRecoilValue } from 'recoil';
 import { searchStateAtom } from '../../../data/atoms';
 import Search from '../../../components/Search';
 
-const Commit = (index) => {
+const Commit = () => {
 	const router = useRouter();
-	const { name } = router.query;
+	const { name, index } = router.query;
 	const { data, error } = useSWR(name, githubCommits);
 
 	// Search through the commits
@@ -47,11 +48,18 @@ const Commit = (index) => {
 										<StatLabel fontSize='sm' noOfLines={2}>
 											{commit?.commit?.message}
 										</StatLabel>
-										<HStack color='teal.300' fontSize='0.8rem'>
-											<Box>
+										<HStack fontSize='0.8rem'>
+											<Box color='teal.400'>
 												<DiLinux />
 											</Box>
-											<Text>{commit?.author?.login}</Text>
+											<Text color='teal.400'>{commit?.author?.login}</Text>
+											<Text color='gray.400'>
+												commited{' '}
+												<ReactTimeAgo
+													date={commit?.commit?.committer?.date}
+													locale='en-US'
+												/>
+											</Text>
 										</HStack>
 									</Stat>
 								</Box>
