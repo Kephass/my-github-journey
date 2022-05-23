@@ -28,16 +28,6 @@ const Search = () => {
 					placeholder='Search commits'
 					borderRadius='full'
 				/>
-				<InputRightElement width='4.5rem'>
-					<Button
-						h='1.75rem'
-						size='sm'
-						borderRadius='full'
-						bgColor='transparent'
-					>
-						<FaSearch />
-					</Button>
-				</InputRightElement>
 			</InputGroup>
 		</Box>
 	);
