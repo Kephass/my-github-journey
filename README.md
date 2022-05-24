@@ -10,11 +10,11 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # .env
-Update the .env file with the token sent to your email address.
 
+Update the .env file with the token sent to your email address.
 
 ## Technologies used
 
@@ -24,7 +24,7 @@ Update the .env file with the token sent to your email address.
 - Recoil
 - SWR
 - Octokit
-
+- Framer motion
 
 ## Some ES6 features
 
@@ -33,7 +33,6 @@ Update the .env file with the token sent to your email address.
 
 2. Map
    I used the map() function to loop over the data I got back from the api to create the repos and commits layout. map() is really useful because it returns an array from the function passed to it which is directly useful without having to append the elements to another array as you would with for instance a for loop.
-
 
 ## Deployed onto Vercel and Netlify
 
