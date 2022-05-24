@@ -11,6 +11,7 @@ import {
 import Link from 'next/link';
 import useSWR from 'swr';
 import ReactTimeAgo from 'react-time-ago';
+import { motion } from 'framer-motion';
 
 async function fetcher(...arg) {
 	const res = await fetch(...arg);
@@ -41,41 +42,46 @@ const Repos = () => {
 									key={index}
 								>
 									<a>
-										<Box
-											p={5}
-											mb={3}
-											borderWidth='1px'
-											rounded='lg'
-											boxShadow={'md'}
+										<motion.div
+											whileHover={{ scale: 1.05 }}
+											whileTap={{ scale: 0.9 }}
 										>
-											<Stat>
-												<StatLabel fontSize='xl'>
-													{repo.name}
-													<Text
-														as='span'
-														fontSize='.7rem'
-														mx='2'
-														py='1'
-														px='3'
-														borderWidth='1px'
-														borderRadius='xl'
-													>
-														{repo.visibility}
-													</Text>
-												</StatLabel>
-												<StatHelpText color='teal.300' noOfLines={2}>
-													<Text>{data ? repo.description : 'Loading'}</Text>
-												</StatHelpText>
-												<HStack fontSize='.7rem'>
-													<Text>{repo?.language}</Text>
-													<Text>{repo?.license?.name}</Text>
-													<ReactTimeAgo
-														date={repo?.updated_at}
-														locale='en-US'
-													/>
-												</HStack>
-											</Stat>
-										</Box>
+											<Box
+												p={5}
+												mb={3}
+												borderWidth='1px'
+												rounded='lg'
+												boxShadow={'md'}
+											>
+												<Stat>
+													<StatLabel fontSize='xl'>
+														{repo.name}
+														<Text
+															as='span'
+															fontSize='.7rem'
+															mx='2'
+															py='1'
+															px='3'
+															borderWidth='1px'
+															borderRadius='xl'
+														>
+															{repo.visibility}
+														</Text>
+													</StatLabel>
+													<StatHelpText color='teal.300' noOfLines={2}>
+														<Text>{data ? repo.description : 'Loading'}</Text>
+													</StatHelpText>
+													<HStack fontSize='.7rem'>
+														<Text>{repo?.language}</Text>
+														<Text>{repo?.license?.name}</Text>
+														<ReactTimeAgo
+															date={repo?.updated_at}
+															locale='en-US'
+														/>
+													</HStack>
+												</Stat>
+											</Box>
+										</motion.div>
 									</a>
 								</Link>
 							);
