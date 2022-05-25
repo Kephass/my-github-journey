@@ -21,7 +21,7 @@ async function fetcher(...arg) {
 
 const Repos = () => {
 	const { data, error } = useSWR('/api/githubRepos', fetcher);
-
+	console.log(data);
 	return (
 		data && (
 			<>
@@ -34,7 +34,7 @@ const Repos = () => {
 							md: 'repeat(auto-fill, minmax(350px, 1fr))',
 						}}
 					>
-						{data.repos.data.map((repo, index) => {
+						{data.repos.map((repo, index) => {
 							return (
 								<Link
 									as={`/repos/commit/${repo.name}`}
