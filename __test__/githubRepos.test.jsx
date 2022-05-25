@@ -8,7 +8,6 @@ describe('githubRepos', () => {
 			done();
 		});
 	});
-
 	test('the data is undefined', async () => {
 		const data = await githubRepos();
 		expect(data).toBeDefined;
