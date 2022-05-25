@@ -1,12 +1,5 @@
 import { FaSearch } from 'react-icons/fa';
-import {
-	Box,
-	Button,
-	Container,
-	Input,
-	InputGroup,
-	InputRightElement,
-} from '@chakra-ui/react';
+import { Box, Input, InputGroup } from '@chakra-ui/react';
 import { useRecoilState } from 'recoil';
 import { searchStateAtom } from '../data/atoms';
 

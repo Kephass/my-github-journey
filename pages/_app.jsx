@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 TimeAgo.addDefaultLocale(en);
+TimeAgo.addLocale(en);
 
 function MyApp({ Component, pageProps }) {
 	return (

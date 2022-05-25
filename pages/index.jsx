@@ -1,12 +1,8 @@
 import useSWR from 'swr';
 import {
 	Box,
-	Center,
 	CircularProgress,
 	Container,
-	Divider,
-	Flex,
-	Grid,
 	Heading,
 	Link,
 	SimpleGrid,
@@ -14,7 +10,6 @@ import {
 	StatLabel,
 	StatNumber,
 	Text,
-	useColorModeValue,
 } from '@chakra-ui/react';
 import Head from 'next/head';
 
