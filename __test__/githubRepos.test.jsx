@@ -3,7 +3,7 @@ const githubRepos = require('../pages/api/githubRepos');
 describe('githubRepos', () => {
 	test('should return data', async (done) => {
 		expect.assertions(1);
-		githubRepos(fetch).then((data) => {
+		githubRepos.repos(fetch).then((data) => {
 			expect(data).toEqual(expect.any(Array));
 			done();
 		});
