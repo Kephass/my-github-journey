@@ -30,7 +30,7 @@ const Commit = () => {
 
 	return (
 		<>
-			<Container maxWidth='80%'>
+			<Container maxWidth='80%' minHeight='80vh'>
 				<Box>
 					<Search />
 					<Container maxWidth='60%' mt={'16'}>

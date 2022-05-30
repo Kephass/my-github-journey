@@ -44,7 +44,7 @@ const Home = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<Box height='80vh'>
+			<Box height='75vh'>
 				<Heading as='h1' textAlign='center'>
 					Welcome to{' '}
 					<Link href='https://github.com/Kephass' isExternal>
