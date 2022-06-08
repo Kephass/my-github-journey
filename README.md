@@ -2,8 +2,9 @@ This is a Github API project built with [Next.js](https://nextjs.org/).
 
 ## My Github Journey project
 
-First, run the development server:
+First, update the .env file with your own github personal token.
 
+Then run the development server:
 ```bash
 npm run dev
 # or
@@ -12,9 +13,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# .env
-
-Update the .env file with the token sent to your email address.
 
 ## Technologies used
 
@@ -25,14 +23,6 @@ Update the .env file with the token sent to your email address.
 - SWR
 - Octokit
 - Framer motion
-
-## Some ES6 features
-
-1. Optional chaining
-   I used optional chaining to read the value of the github api data located deep within connected objects without having to check that each reference in the chain is valid. That way I avoid writing chunky code.
-
-2. Map
-   I used the map() function to loop over the data I got back from the api to create the repos and commits layout. map() is really useful because it returns an array from the function passed to it which is directly useful without having to append the elements to another array as you would with for instance a for loop.
 
 ## Deployed onto Vercel and Netlify
 
